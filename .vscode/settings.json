@@ -1,0 +1,11 @@
+{
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.compilerPath": "C:/Qt/Tools/mingw1310_64/bin/g++.exe",
+    "C_Cpp.errorSquiggles": "enabled",
+    "cmake.configureArgs": [
+        "-DCMAKE_INSTALL_PREFIX=C:/Users/z00509zf/DiffAlgoEval",
+        "-DCMAKE_RC_COMPILER=C:/Qt/Tools/mingw1310_64/bin/windres.exe"
+    ]
+}

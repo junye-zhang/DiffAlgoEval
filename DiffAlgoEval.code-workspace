@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"qaction": "cpp",
+			"qvariant": "cpp",
+			"qapplication": "cpp",
+			"qcheckbox": "cpp"
+		}
+	}
 }
