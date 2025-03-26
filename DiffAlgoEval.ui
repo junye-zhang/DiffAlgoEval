@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>796</width>
+    <height>592</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,7 +38,7 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QCheckBox" name="checkBox">
+    <widget class="QCheckBox" name="checkBox_bsdiff">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -57,7 +57,7 @@
       <string>bsdiff</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox_2">
+    <widget class="QCheckBox" name="checkBox_courgette">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -70,7 +70,7 @@
       <string>courgette</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox_3">
+    <widget class="QCheckBox" name="checkBox_hdiffpatch">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -83,7 +83,7 @@
       <string>hdiffpatch</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox_4">
+    <widget class="QCheckBox" name="checkBox_vcdiff">
      <property name="geometry">
       <rect>
        <x>380</x>
@@ -96,7 +96,7 @@
       <string>vcdiff</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox_5">
+    <widget class="QCheckBox" name="checkBox_xdelta3">
      <property name="geometry">
       <rect>
        <x>480</x>
@@ -109,7 +109,7 @@
       <string>xdelta3</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="pushButton_algocfm">
      <property name="geometry">
       <rect>
        <x>600</x>
@@ -122,7 +122,7 @@
       <string>Confirm</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="pushButton_algoresel">
      <property name="geometry">
       <rect>
        <x>690</x>
@@ -155,7 +155,7 @@
       <x>0</x>
       <y>110</y>
       <width>791</width>
-      <height>271</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -177,11 +177,11 @@
       <string>Select Files</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="pushButton_filecfm">
      <property name="geometry">
       <rect>
-       <x>570</x>
-       <y>240</y>
+       <x>580</x>
+       <y>60</y>
        <width>75</width>
        <height>24</height>
       </rect>
@@ -190,11 +190,11 @@
       <string>Confirm</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="pushButton_fileresel">
      <property name="geometry">
       <rect>
        <x>670</x>
-       <y>240</y>
+       <y>60</y>
        <width>75</width>
        <height>24</height>
       </rect>
@@ -203,20 +203,20 @@
       <string>Reselect</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="pushButton_oldfile">
      <property name="geometry">
       <rect>
        <x>40</x>
        <y>40</y>
-       <width>75</width>
+       <width>91</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>SelectFile</string>
+      <string>SelectOldFile</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEdit_oldfile">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -226,93 +226,24 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="pushButton_newfile">
      <property name="geometry">
       <rect>
        <x>40</x>
        <y>80</y>
-       <width>75</width>
+       <width>91</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>SelectFile</string>
+      <string>SelectNewFile</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>120</y>
-       <width>75</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>SelectFile</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_8">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>160</y>
-       <width>75</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>SelectFile</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_9">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>200</y>
-       <width>75</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>SelectFile</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="lineEdit_newfile">
      <property name="geometry">
       <rect>
        <x>160</x>
        <y>80</y>
-       <width>381</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>120</y>
-       <width>381</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>160</y>
-       <width>381</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_5">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>200</y>
        <width>381</width>
        <height>22</height>
       </rect>
@@ -323,9 +254,9 @@
     <property name="geometry">
      <rect>
       <x>-1</x>
-      <y>379</y>
+      <y>239</y>
       <width>791</width>
-      <height>171</height>
+      <height>311</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -334,11 +265,11 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton_10">
+    <widget class="QPushButton" name="pushButton_starteval">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>70</y>
+       <x>30</x>
+       <y>140</y>
        <width>75</width>
        <height>24</height>
       </rect>
@@ -354,7 +285,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>796</width>
      <height>33</height>
     </rect>
    </property>
