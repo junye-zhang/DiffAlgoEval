@@ -13,7 +13,7 @@
 #include <stdexcept>
 #include <cstdint>
 #include "DiffAlgoEval.h"
-
+#include "mock_algo.h"
 class AlgoSelect 
 {
 public:
@@ -179,7 +179,7 @@ public:
     int GetFileSelect(std::string &old_path, std::string &new_path)
     {
         std::lock_guard<std::mutex> lock(file_select_mutex); // Lock the mutex for thread safety
-        if(file_select_fin) {
+        if(!file_select_fin) {
             return -1; // Cannot get selection after finalization
         }
         old_path = old_file_path; 
@@ -378,8 +378,43 @@ private slots:
             QMessageBox::warning(this, "Warning", "Please confirm the file selection first.");
             return;
         }
+        
         // Start the evaluation process here
-        QMessageBox::information(this, "Info", "Starting evaluation process...");
+        std::string old_file_path, new_file_path;
+        std::string old_file_md5;
+        std::string new_file_md5;
+        std::chrono::duration<double> duration;
+        uint64_t memory;
+        uint64_t cpu;
+        MockAlgo mockAlgo;
+        AlgoEvalResult result;
+
+        if(file_sel.GetFileSelect(old_file_path, new_file_path) != 0)
+        {
+            QMessageBox::warning(this, "Warning", "Failed to get file selection.");
+            return;
+        }
+        mockAlgo.SetAlgoEvalFilePath(old_file_path, new_file_path);
+        mockAlgo.StartEval();
+        if(mockAlgo.GetEvalResult(result) != 0)
+        {
+            QMessageBox::warning(this, "Warning", "Failed to get evaluation result.");
+            return;
+        }
+        
+        result.GetEvalResult(old_file_path, new_file_path, old_file_md5, new_file_md5, duration, memory, cpu);
+        // Display the evaluation result in a message box or any other UI element
+        QString resultMessage = QString("Algorithm: %1\nOld File: %2\nNew File: %3\nMD5: %4\nMD5: %5\nDuration: %6 seconds\nMemory: %7 bytes\nCPU: %8%")
+            .arg("MockAlgo") // Replace with the actual algorithm name
+            .arg(QString::fromStdString(old_file_path))
+            .arg(QString::fromStdString(new_file_path))
+            .arg(QString::fromStdString(old_file_md5))
+            .arg(QString::fromStdString(new_file_md5))
+            .arg(duration.count())
+            .arg(memory)
+            .arg(cpu);
+        // Show the result message in a message box
+        QMessageBox::information(this, "Evaluation Result", resultMessage);
     }
 private:
     Ui::MainWindow ui;
